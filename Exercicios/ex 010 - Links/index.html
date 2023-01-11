@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com links</title>
+</head>
+<body>
+    <h1>Criando um link</h1>
+    <a href="https://github.com/Kievzera" hreflang="en"> Este é meu github </a>
+    <br>
+    <a href="pagina2.html" target="_self">
+        continuar navegando no site 
+    </a>
+    <br>
+    <a href="https://github.com/Kievzera" target="_blank">
+        Abrir perfil do github em uma nova janela
+    </a>
+
+    <p>Geralmente usar o _blank para links de site externo e _self para site interno.</p>
+
+
+    <h2>Como guiar a navegação pelos links</h2>
+
+    <p>Existe um recurso bem interessante para links que pe indicar qual pe a natureza do destino usando o atributo <code>rel</code>. Esse atributo aceita vários valores, entre eles vou citar:  </p>
+    
+    <ul>
+        <li><code>next</code> indica que o link é para a próxima parte do documento atual </li>
+
+        <li><code>prev</code> indica que o link é para a parte anterior do documento atual </li>
+
+        <li><code>author</code> indica que é um link para o site do autor do artigo atual</li>
+
+        <li><code>external</code> indica que é um link para outro site que não faz parte do site</li>
+    
+        <li><code>nofollow</code> indica que é um link para um site não endossado, como um link pago</li>
+    </ul>
+
+
+    <pre><code>
+        &lt;a href="<ins>pagina2.html</ins>" target="_self rel="next"&gt;
+           Continuar navegando no site &lt;/a&gt;
+
+        &lt;a href="<ins>https://github.com/Kievzera</ins>" target="_blank" rel="external"> 
+            Abrir perfil GitHub em nova janela.&lt;/a&gt;
+    </code></pre>
+
+    <h2>Links para fazer Download</h2>
+
+    <pre><code>
+        
+         &lt;a href="<ins>arquivos/meulivro.pdf</ins>" Download="meulivro.pdf" type="application/pdf"&gt;
+            Baixe aqui o PDF do meu livro &lt;/a&gt;
+    </code></pre>
+    
+    <p>Aqui vão alguns <em>media types</em> bem usados no nosso dia-a-dia:</p>
+    <p>
+        <ul type="square">
+            <li>application/zip</li>
+            <li>text/html</li>
+            <li>text/css</li>
+            <li>text/Javascript</li>
+            <li>Video/mp4</li>
+            <li>video/h264</li>
+            <li>video/JPEG</li>
+            <li>audio/aac</li>
+            <li>audio/mpeg</li>
+            <li>font/ttf</li>
+            <li>image/jpeg</li>
+            <li>image/png</li>
+        </ul>
+    </p>
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens dinâmicas</title>
+</head>
+<body>
+    <h1>Imagens Flexíveis</h1>
+
+    <p>Para esse exemplo, criamos as três imagens ao lado: a menor tem 300x300px, a média tem 700x700px e maior tem 1000x1000px. Usamos o programa <Strong>GIMP</Strong>, que é um editor de imagens 100% gratuito. Essas imagens serão carregadas pelo navegador de acordo com o tamanho da janela atual. Para isso, criamos o seguinte código base:</p>
+
+    <pre><code>
+        &lt;picture&gt;
+            &lt;img src="<ins>foto-g.png</ins>" alt="A imagem flexível funciona">
+        &lt;/picture&gt;
+    </code></pre>
+
+    <p>É importante que existe uma ordem entre os <code>&lt;source&gt;</code>, e nessa configuração, existe os itens mais acima sejam os menores tamanhos para <code>max-width</code> e que os seguintes sejam maiores, de forma crescente. O último item dentro de <code>&lt;picture&gt;</code> deve ser a imagem padrão. </p>
+
+    <picture>
+        
+        
+        <source media="(max-width: 750px)" srcset="foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="foto-m.png" type="image/png">
+        <img src="foto-g.png" alt="A imagem flexível funciona">
+    </picture>
+
+    <h2>Audio</h2>
+
+    <audio preload="metadata" controls loop>
+        <source src="../guanacast-33.mp3" type="audio/mpeg">
+        <source src="../guanacast-33.ogg" type="audio/ogg">
+        <source src="../guanacast-33.wav" type="image/wav">
+        <p>Seu navegador não suporta áudio <a href="../guanacast-33.mp3" download="guanacast-33.mp3" type="audio/mpeg"></a></p>
+    </audio>
+
+    <p>Vamos analisar os principais atributos da tag <code>&lt;audio&gt;</code> antes de mais nada:</p>
+
+    <ul> 
+       <li>O atributo <code>preload</code> indica se o áudio será pré-carregado ou não e aceita três valores:</li>
+        <ul><li type="circle"><code>metadata</code> vai carregar apenas as informações sobre o arquivo (tamanho, tempo, informações de direitos, etc)</li>
+        <li><code>none</code> não vai carregar absolutamente nada até que o usuário clique no botão play ou um script inicie a reprodução</li>
+        <li><code>auto</code> (padrão) vai carregar o arquivo de áudio inteiro assim que a página for carregada, mesmo que o usuário nunca aperte o play</li>
+        </ul>
+        <li>O atributo <code>controls</code> vai apresentar o player na tela, Caso não seja colocado na tag <code>&lt;audio&gt;</code>, o controle será transparente e o usuário não poderá interagir com ele.</li>
+        <li>O atributo <code>autoplay</code>, quando inserido, vai iniciar a reprodução do áudio assim que a página for carregada.</li><li>O atributo loop vau fazer com que o audio seja repetido eternamente assim que terminar a sua reprodução.</li>
+    </ul>
+   
+
+    <h2>E os vídeos? </h2>
+
+    <video width="600" poster="../imagens/limões-capa.png" controls autoplay loop>
+    <source src="../Limão-Água.webm" type="video/webm">
+    <source src="../Limão-Água.mp4" type="video/mp4">
+    <source src="Limão-água.ogv" type="video/ogg">
+    
+    </video>
+    <p>Infelizmente seu navegador não conseguiu carregar o vídeo. <a href="../Limão-Água.mp4" download="Limão-afundando,mp4" type="video/mp4">Clique aqui</a> para baixa-lo</p>
+    <pre><code>
+        &lt;video width="600" poster="thumb.jpg" controls autoplay loop&gt;
+            &lt;source src="Limão-água.webm" type="video/webm"&gt;
+            &lt;source src="../Limão-água.mp4" type="video/mp4"&gt;
+            &lt;source src="Limão-água.ogv" type="video/ogg"&gt;
+            &lt;p&gt;Infelizmente seu navegador não conseguiu carregar o vídeo. &lt;a href="Limão-água.mp4" download="Limão-afundando,mp4" type="video/mp4">Clique aqui&lt;/a&gt; para baixa-lo&lt;/p&gt;
+        &lt;/video&gt;
+    </code></pre>
+
+    <h2>Incorporando vídeos no HTML</h2>
+
+    <p>Para incorporar vídeos que você subiu no <strong>YouTube</strong> ou <strong>Vimeo</strong>, existem recursos que te dão o código pronto em HTML5. Procure pelo botão compartilhar, e depois na opção de incorporar. </p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GBIIQ0kP15E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</body>
+</html>
